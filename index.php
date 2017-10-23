@@ -12,8 +12,14 @@
 <body>
 <header class="header">
     <div class="container">
-        <nav class="navbar">
+        <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand align-items-center" href="index.php">AdressBOOK</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="" </a>
+                </li>
+
+            </ul>
         </nav>
     </div>
 
@@ -25,7 +31,7 @@
                 <div class="adder">
                     <form>
                         <label class="label-file" for="file"></label>
-                        <input id="file" type="file" name="person_image" />
+                        <input id="file" type="file" name="person_image" accept="image/jpeg,image/png,image/jpg" />
                         <input type="text" name="person_name" placeholder="Name Surname" />
                         <input type="tel" name="person_phone" placeholder="Phone Number" />
                         <input type="email" name="person_email" placeholder="E-mail" />
@@ -38,7 +44,7 @@
                 <div class="adder">
                     <form>
                         <label class="label-file" for="file"></label>
-                        <input id="file" type="file" name="person_image" />
+                        <input id="file" type="file" name="person_image" accept="image/jpeg,image/png,image/jpg" />
                         <input type="text" name="person_name" placeholder="Name Surname" />
                         <input type="tel" name="person_phone" placeholder="Phone Number" />
                         <input type="email" name="person_email" placeholder="E-mail" />
@@ -51,7 +57,7 @@
                 <div class="adder">
                     <form>
                         <label class="label-file" for="file"></label>
-                        <input id="file" type="file" name="person_image" />
+                        <input id="file" type="file" name="person_image" accept="image/jpeg,image/png,image/jpg" />
                         <input type="text" name="person_name" placeholder="Name Surname" />
                         <input type="tel" name="person_phone" placeholder="Phone Number" />
                         <input type="email" name="person_email" placeholder="E-mail" />
