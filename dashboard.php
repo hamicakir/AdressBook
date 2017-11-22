@@ -48,6 +48,9 @@
 
                     <a href="javascript:void(0);" class="nav-link" onclick="openSearch()"><i class="ion ion-search"></i></a>
                 </li>
+                <li class="nav-item">
+                    <a href="controller/LogoutController.php" class="nav-link"><i class="ion ion-android-exit"></i></a>
+                </li>
 
             </ul>
         </nav>
@@ -67,7 +70,7 @@
                    <div class="col-md-4">
                        <div class="adder">
                            <form action="controller/FormUpdateController.php" method="post">
-                               <a class="delete-link" href="controller/deleteAdress.php?id=<?php echo $adressArray[$i]["id"]; ?>">
+                               <a class="delete-link" href="controller/DeleteAdressController.php?id=<?php echo $adressArray[$i]["id"]?>">
                                    <i class="ion ion-close"></i>
                                </a>
                                <label class="label-file" for="file"><i class="ion ion-camera"></i></label>
