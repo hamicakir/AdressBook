@@ -121,6 +121,9 @@ textarea::placeholder{
       transform: translateX(-50%) translateY(-50%);
       caret-color:#fff;
       color:white;
+      &::placeholder{
+        color:white;
+      }
     }
     .form-submit{
       float:none;
@@ -161,7 +164,7 @@ textarea::placeholder{
       margin:15px 45px;
       .home-link{
         font-size:48px;
-        color:#424242;
+        color:white;
         .ion{
           display:block;
           text-align:center;
@@ -195,7 +198,15 @@ textarea::placeholder{
   padding:15px;
   margin-top:40px;
 }
+.navbar-brand{
+  &:hover{
+    color:white;
+  }
+}
 .nav-link{
+  &:hover{
+    color:white;
+  }
   .ion{
     font-size:30px;
     font-weight: 200;

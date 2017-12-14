@@ -3,7 +3,8 @@ include "../connection/database.php";
 ob_start();
 session_start();
 if($_POST["formUpdate"]){
-    $id = $_POST["contact_id"];
+    print_r($_FILES["person_filer"]);
+   /* $id = $_POST["contact_id"];
     $contact_name = $_POST["person_name"];
     $contact_phone = $_POST["person_phone"];
     $contact_email = $_POST["person_email"];
@@ -32,7 +33,7 @@ if($_POST["formUpdate"]){
     else{
         header("Location:../dashboard.php?update=no");
         exit;
-    }
+    }*/
 
 
 }

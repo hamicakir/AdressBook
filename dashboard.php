@@ -32,10 +32,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#1e76d1">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <title>Adress Book | Hami ÇAKIR</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 </head>
 <body>
 <header class="header">
@@ -55,7 +57,6 @@
             </ul>
         </nav>
     </div>
-
 </header>
 <div id="search">
     <a href="javascript:void(0);" onclick="closeSearch()"><i class="ion ion-close-round"></i></a>
@@ -69,18 +70,27 @@
                        ?>
                    <div class="col-md-4">
                        <div class="adder">
-                           <form action="controller/FormUpdateController.php" method="post">
-                               <a class="delete-link" href="controller/DeleteAdressController.php?id=<?php echo $adressArray[$i]["id"]?>">
+                           <form action="controller/FormUpdateController.php" method="post" enctype="multipart/form-data">
+                               <a class="delete-link" onclick="alertDelete()" href="controller/DeleteAdressController.php?id=<?php echo $adressArray[$i]["id"]?>">
                                    <i class="ion ion-close"></i>
                                </a>
-                               <label class="label-file" for="file"><i class="ion ion-camera"></i></label>
+                               <label class="label-file" for="person_file">
+                                   <?php
+                                   if($adressArray[$i]["contact_image"] != ""){?>
+                                       <img src="<?php echo $adressArray[$i]["contact_image"]; ?>"/>
+                                 <?php }else{?>
+                                       <i class="ion ion-camera"></i>
+                                       <?php
+                                       }
+                                   ?>
+                                   </label>
                                <input type="hidden" name="contact_id" value="<?php echo $adressArray[$i]["id"];?>"/>
-                               <input id="file" type="file" name="person_file" accept="image/*">
+                               <input id="person_file" type="file" name="person_filer">
                                <input type="text" name="person_name" placeholder="Name Surname" value="<?php echo $adressArray[$i]["contact_name"];?>">
                                <input type="tel" name="person_phone" placeholder="Phone" value="<?php echo $adressArray[$i]["contact_phone"];?>">
                                <input type="email" name="person_email" placeholder="E-mail" value="<?php echo $adressArray[$i]["contact_email"];?>">
                                <textarea rows="10" placeholder="Adress" name="person_adress"><?php echo $adressArray[$i]["contact_adress"]; ?></textarea>
-                               <input type="submit" value="Kaydet" name="formUpdate">
+                               <input type="submit" value="Güncelle" name="formUpdate">
                            </form>
                        </div>
                    </div>
@@ -111,9 +121,7 @@
         </div>
     </div>
 </div>
-
-
-
+<script type="text/javascript" src="js/sweetalert2.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

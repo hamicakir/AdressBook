@@ -16,18 +16,19 @@ function CreateElements() {
     var divAdder = document.createElement("div");
     divAdder.className = "adder";
     var adderForm = document.createElement("form");
-    adderForm.action = "../controller/FormSaveController.php";
     adderForm.method = "post";
+    adderForm.setAttribute("enctype" , "multipart/data");
+    adderForm.action = "../controller/FormSaveController.php";
     var fileLabel = document.createElement("label");
     fileLabel.className = "label-file";
-    fileLabel.htmlFor = "file";
+    fileLabel.htmlFor = "person_file";
     var fileLabeli = document.createElement("i");
     fileLabeli.className = "ion ion-camera";
-    var formInputFile = document.createElement("input");
-    formInputFile.id = "file";
-    formInputFile.type = "file";
-    formInputFile.name = "person_file";
-    formInputFile.accept = "image/*";
+    var formInputFile = document.createElement("INPUT");
+    formInputFile.setAttribute("id","person_file");
+    formInputFile.setAttribute("type","file");
+    formInputFile.setAttribute("name","person_file");
+    formInputFile.setAttribute("accept" , "image/png,image/jpeg,image/jpg");
     var formInputText = document.createElement("input");
     formInputText.type = "text";
     formInputText.name = "person_name";
@@ -68,6 +69,14 @@ window.addEventListener("load",function (ev) {
         CreateElements();
     });
 });
+function alertDelete() {
+    swal({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        type: 'error',
+        confirmButtonText: 'Cool'
+    });
+}
 
 
 
